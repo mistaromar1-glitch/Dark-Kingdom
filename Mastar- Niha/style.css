@@ -1,0 +1,247 @@
+.welcome-bg {
+  background: linear-gradient(180deg, #4a0000, #000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.welcome-box {
+  text-align: center;
+}
+
+.devil-icon {
+  font-size: 60px;
+  filter: drop-shadow(0 0 20px #ff00ff);
+  margin-bottom: 20px;
+}
+
+.welcome-box h1 {
+  color: #ff5500;
+  font-size: 2.2em;
+  text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #ff5500;
+  font-size: 0.9em;
+  margin-bottom: 30px;
+}
+
+.btn-group {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn-red, .btn-orange {
+  padding: 12px 25px;
+  border: 2px solid #ff0000;
+  background: #000;
+  color: #ff5500;
+  font-weight: 900;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 15px #ff0000;
+}
+
+.btn-orange {
+  background: #ff5500;
+  color: #000;
+}
+
+/* DEVIL ICON PULSE */
+.devil-icon {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); filter: drop-shadow(0 0 10px #ff00ff); }
+  50% { transform: scale(1.2); filter: drop-shadow(0 0 30px #ff00ff); }
+ 100% { transform: scale(1); filter: drop-shadow(0 0 10px #ff00ff); }
+}
+
+/* TEXT GLOW ANIMATION */
+.welcome-box h1 {
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000; }
+  to { text-shadow: 0 0 20px #ff5500, 0 0 40px #ff5500; }
+}
+
+/* BUTTON GLOW */
+.btn-red, .btn-orange {
+  animation: btnGlow 2s infinite;
+}
+
+@keyframes btnGlow {
+ 0% { box-shadow: 0 0 10px #ff0000; }
+ 50% { box-shadow: 0 0 25px #ff5500; }
+ 100% { box-shadow: 0 0 10px #ff0000; }
+}
+
+/* DEVIL ICON - SHALID PULSE */
+.devil-icon {
+  font-size: 70px;
+  animation: pulse 1.2s infinite; /* speed baraisi */
+}
+
+@keyframes pulse {
+ 0% { transform: scale(1); filter: drop-shadow(0 0 15px #ff00ff) drop-shadow(0 0 30px #ff00ff); }
+  50% { transform: scale(1.3); filter: drop-shadow(0 0 40px #ff00ff) drop-shadow(0 0 60px #ff00ff); }
+  100% { transform: scale(1); filter: drop-shadow(0 0 15px #ff00ff) drop-shadow(0 0 30px #ff00ff); }
+}
+
+/* TEXT GLOW - SHALID AGUN */
+.welcome-box h1 {
+  animation: glow 0.8s infinite alternate; /* speed baraisi */
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 15px #ff0000, 0 0 30px #ff0000, 0 0 45px #ff0000; }
+  to { text-shadow: 0 0 25px #ff5500, 0 0 50px #ff5500, 0 0 75px #ff5500; }
+}
+
+/* BUTTON GLOW - SHALID */
+.btn-red, .btn-orange {
+  animation: btnGlow 1.2s infinite;
+}
+
+@keyframes btnGlow {
+ 0% { box-shadow: 0 0 15px #ff0000, 0 0 30px #ff0000; }
+ 50% { box-shadow: 0 0 30px #ff5500, 0 0 60px #ff5500; }
+ 100% { box-shadow: 0 0 15px #ff0000, 0 0 30px #ff0000; }
+}
+
+/* PAGE LOAD ANIMATION - BHITORE THEKE SAMNE */
+.welcome-box {
+  animation: comeFromBack 2s ease-out;
+}
+
+.devil-icon {
+  animation: comeFromBack 1.8s ease-out 0.2s both, pulse 0.3s infinite 1.2s infinite 2.1s;
+}
+
+.welcome-box h1 {
+  animation: comeFromBack 1.8s ease-out 0.6s both, glow 0.8s infinite alternate 2.4s;
+}
+
+.subtitle {
+  animation: comeFromBack 1.8s ease-out 0.9s both;
+}
+
+.btn-group {
+  animation: comeFromBack 1.8s ease-out 1.2s both;
+}
+
+@keyframes comeFromBack {
+ 0% {
+    opacity: 0;
+    transform: scale(0.3) translateZ(-200px); /* onek pichon theke */
+    filter: blur(10px);
+  }
+ 100% {
+    opacity: 1;
+    transform: scale(1) translateZ(0); /* samne chole ashbe */
+    filter: blur(0);
+  }
+}
+
+/* AGUN ER ANIMATION GULO AGERTA EI */
+@keyframes pulse {
+ 0% { transform: scale(1); filter: drop-shadow(0 0 15px #ff00ff) drop-shadow(0 0 30px #ff00ff); }
+  50% { transform: scale(1.3); filter: drop-shadow(0 0 40px #ff00ff) drop-shadow(0 0 60px #ff00ff); }
+  100% { transform: scale(1); filter: drop-shadow(0 0 15px #ff00ff) drop-shadow(0 0 30px #ff00ff); }
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 15px #ff0000, 0 0 30px #ff0000, 0 0 45px #ff0000; }
+  to { text-shadow: 0 0 25px #ff5500, 0 0 50px #ff5500, 0 0 75px #ff5500; }
+}
+
+@keyframes btnGlow {
+ 0% { box-shadow: 0 0 15px #ff0000, 0 0 30px #ff0000; }
+ 50% { box-shadow: 0 0 30px #ff5500, 0 0 60px #ff5500; }
+ 100% { box-shadow: 0 0 15px #ff0000, 0 0 30px #ff0000; }
+}
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  background: #111;
+  padding: 30px;
+  border-radius: 10px;
+  border: 2px solid #ff0000;
+  box-shadow: 0 0 30px #ff0000;
+}
+
+h1 {
+  text-align: center;
+  color: #ff0000;
+  text-shadow: 0 0 10px #ff0000;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #ff5500;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  background: #222;
+  border: 1px solid #ff0000;
+  color: #fff;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+input:focus, select:focus {
+  outline: none;
+  box-shadow: 0 0 10px #ff5500;
+}
+
+.next-btn {
+  background: linear-gradient(90deg, #ff0000, #ff5500);
+  color: #000;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1em;
+  font-weight: 900;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 60%;
+  margin: 20px auto 0 auto;
+  display: block;
+  box-shadow: 0 0 15px #ff0000, 0 0 30px #ff5500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+
+.next-btn:hover { 
+  transform: scale(1.05); 
+  box-shadow: 0 0 30px #ff0000, 0 0 60px #ff5500; 
+}
+
+.rules-box {
+  background: #1a1a1a;
+  padding: 20px;
+  border: 2px solid #ff5500;
+  border-radius: 10px;
+  margin-top: 20px;
+}

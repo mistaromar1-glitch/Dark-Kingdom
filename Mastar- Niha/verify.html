@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="welcome-box">
+  <div class="devil-icon">👹</div>
+  <h1>LOGIN</h1>
+  <p class="subtitle">Welcome back! Enter your credentials</p>
+  
+  <div class="form-group">
+    <label>Email Address:</label>
+    <input type="email" id="loginEmail" placeholder="Enter your Email">
+  </div>
+  <div class="form-group">
+    <label>Phone Number:</label>
+    <input type="text" id="loginPhone" placeholder="Enter your Phone">
+  </div>
+  <div class="form-group">
+    <label>Password:</label>
+    <input type="password" id="loginPass" placeholder="Enter your Password">
+  </div>
+
+  <button class="next-btn" onclick="loginUser()">LOGIN</button>
+  <a href="Kingdom.html" class="back-link">← Back to Signup</a>
+</div>
+
+<script>
+function loginUser(){
+  const email = document.getElementById('loginEmail').value;
+  const phone = document.getElementById('loginPhone').value;
+  const pass = document.getElementById('loginPass').value;
+
+  if(email === ""){ 
+    alert("⚠️ Please enter your Email Address!"); 
+    return; 
+  }
+  if(phone === ""){ 
+    alert("⚠️ Please enter your Phone Number!"); 
+    return; 
+  }
+  if(pass === ""){ 
+    alert("⚠️ Please enter your Password!"); 
+    return; 
+  }
+
+  // Login successful
+  alert("✅ Login Successful! Welcome back.");
+  
+  // Ekhane apnar Home ba Dashboard page er nam den
+  window.location.href = "home.html"; 
+}
+</script>
+</body>
+</html>

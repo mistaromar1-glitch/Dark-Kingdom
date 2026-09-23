@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>No Mercy Gang - Application</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+  body {
+    background: #000;
+    color: #ff1a1a;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 50px 20px;
+    background-image: radial-gradient(circle at top, #1a0000 0%, #000 100%);
+  }
+
+  .form-box {
+    max-width: 600px;
+    margin: auto;
+    border: 2px solid #ff0000;
+    padding: 30px;
+    border-radius: 15px;
+    background: rgba(255,0,0,0.05);
+    box-shadow: 0 0 30px #ff0000;
+    animation: fadeIn 1.5s ease-in;
+  }
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(30px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
+  h1 {
+    text-align: center;
+    color: #ff3333;
+    text-shadow: 0 0 10px #ff0000;
+    margin-bottom: 10px;
+  }
+  h2 {
+    text-align: center;
+    color: #cc0000;
+    margin-bottom: 30px;
+    font-size: 1em;
+  }
+
+  label {
+    display: block;
+    margin: 15px 0 5px;
+    color: #fff;
+    font-weight: bold;
+  }
+
+  input, textarea, select {
+    width: 100%;
+    padding: 12px;
+    background: #111;
+    border: 1px solid #ff0000;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1em;
+    outline: none;
+  }
+  input:focus, textarea:focus {
+    box-shadow: 0 0 10px #ff0000;
+  }
+
+  .submit-btn {
+    width: 100%;
+    background: #ff0000;
+    color: #000;
+    border: none;
+    padding: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+  }
+  .submit-btn:hover {
+    background: #fff;
+    color: #ff0000;
+    transform: scale(1.05);
+  }
+
+  .back-btn {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #ff0000;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+  <div class="form-box">
+    <h1>No Mercy Gang</h1>
+    <h2>JOIN THE DARKNESS - APPLICATION FORM</h2>
+    
+    <form onsubmit="alert('Application Submitted Master! 👑'); return false;">
+      
+      <label>Real Name:</label>
+      <input type="text" placeholder="Your Name" required>
+      
+      <label>Gang Nickname:</label>
+      <input type="text" placeholder="Your Dark Name" required>
+      
+      <label>Age:</label>
+      <input type="number" placeholder="18+" required>
+      
+      <label>Why do you want to join?</label>
+      <textarea rows="4" placeholder="Write why you deserve to be in No Mercy Gang..." required></textarea>
+      
+      <label>Weapon of Choice:</label>
+      <select required>
+        <option value="">Select</option>
+        <option>Words</option>
+        <option>Mind</option>
+        <option>Power</option>
+        <option>All of them</option>
+      </select>
+      <label>Phone Number:</label>
+      <input type="text" placeholder="01XXXXXXXXX" required>
+        <label>Email Address:</label>
+      <input type="email" placeholder="Your Email" required>
+       <label for="password">Password:</label>
+<input type="password" id="password" name="password" placeholder="Min 6, Max 16" 
+pattern="^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%?&]{6,16}$" 
+title="6-16 character. Capital, small, number, symbol @\$!%*?& lagbei" required>
+
+<label for="confirm_password">Confirm Password:</label>
+<input type="password" id="confirm_password" name="confirm_password" placeholder="Re-enter Password" required>
+      <label>Gang Rank:</label>
+      <select required>
+        <option value="">Select Your skil</option>
+        <option>Hacker</option>
+        <option>Fighter</option>
+        <option>Sniper</option>
+        <option>Spy</option>
+        <option>Commander</option>
+        <option>Shadow</option>
+        <option>Assassin</option>
+      </select>
+      <label>Real Photo:</label>
+      <input type="file" accept="image/*" required>
+      <label>Profile Photo:</label>
+      <input type="file" accept="image/*" required>
+
+<select id="weapon">  <!-- Line 62 -->
+  <option>Select</option>
+  <option>Gun</option>
+</select>
+
+<input type="text" id="phone" placeholder="01XXXXXXXXX"> <!-- Line 65 -->
+
+<input type="email" id="email" placeholder="Your Email"> <!-- Line 68 -->
+
+<input type="password" id="password" placeholder="Min 6, Max 16"> <!-- Line 71 -->
+
+<input type="password" id="cpassword" placeholder="Re-enter Password"> <!-- Line 74 -->
+
+<select id="rank"> <!-- Line 77 -->
+  <option>Select Your skil</option>
+</select>
+
+<input type="file" id="realPhoto"> <!-- Line 80 "Real Photo:" er niche -->
+
+<input type="file" id="profilePhoto"> <!-- Line 83 "Profile Photo:" er niche -->
+
+<button type="button" class="next-btn" onclick="nextPage()">NEXT</button>
+</form>
+
+<div id="rules-page" style="display:none;">
+  <h2>📜 NO MERCY GANG RULES 📜</h2>
+  <div class="rules-box">
+    <p>1. Gang এর গোপন কথা বাইরে বলা যাবে না।</p>
+    <p>2. Master এর আদেশ মানতেই হবে।</p>
+    <p>3. বেইমানি করলে কোনো ক্ষমা নাই। Direct Ban.</p>
+    <p>4. কোনো Mercy নাই। বিশ্বাসঘাতকতা = মৃত্যু।</p>
+    <p>5. 18+ ছাড়া Join করা যাবে না।</p>
+    <p>6. Profile এ Fake Photo দেওয়া যাবে না।</p>
+  </div>
+  
+  <label>
+    <input type="checkbox" id="agree"> I Agree to All Rules
+  </label>
+  
+  <button type="submit" class="submit-btn" id="final-submit" style="display:none;">SUBMIT APPLICATION</button>
+  <button type="button" class="back-btn" onclick="backToForm()">BACK</button>
+</div>
+   
+    <a href="index.html" class="back-btn">← Back to Main Page</a>
+  </div>
+ <script>
+function showRules() {
+  document.querySelector('form').style.display = 'none'; // Form lukabe
+  document.getElementById('rules-page').style.display = 'block'; // Rules dekhabe
+}
+
+function backToForm() {
+  document.querySelector('form').style.display = 'block';
+  document.getElementById('rules-page').style.display = 'none';
+}
+
+// Checkbox e click korle Submit button asbe
+document.getElementById('agree').addEventListener('change', function() {
+  if(this.checked) {
+    document.getElementById('final-submit').style.display = 'block';
+  } else {
+    document.getElementById('final-submit').style.display = 'none';
+  }
+});
+document.querySelector('form').addEventListener('submit', function(e) {
+  var pass = document.getElementById('password').value;
+  var cpass = document.getElementById('confirm_password').value;
+  
+  // 1. 2 ta same kina
+  if(pass !== cpass) {
+    alert('Master! Password 2 ta match kortese na! 👑');
+    e.preventDefault();
+    return;
+  }
+  
+  // 2. Pattern thik ase kina
+  var pattern = /^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%?&]{6,16}$/;
+  if(!pattern.test(pass)) {
+    alert('Password Weak Master! 6-16 letter. Capital + small + Number + Symbol @\$!%*?& ditei hobe');
+    e.preventDefault();
+  }
+});
+
+
+
+</script>
+<script>
+function nextPage(){
+  const weapon = document.getElementById('weapon').value;
+  const phone = document.getElementById('phone').value;
+  const email = document.getElementById('email').value;
+  const pass = document.getElementById('password').value;
+  const cpass = document.getElementById('cpassword').value;
+  const rank = document.getElementById('rank').value;
+  const realPhoto = document.getElementById('realPhoto').value;
+  const profilePhoto = document.getElementById('profilePhoto').value;
+
+  if(weapon === "" || weapon === "Select"){
+    alert("⚠️ Please select your Weapon of Choice.");
+    return;
+  }
+  if(phone === ""){ 
+    alert("⚠️ Please enter your Phone Number."); 
+    return; 
+  }
+  if(email === ""){ 
+    alert("⚠️ Please enter your Email Address."); 
+    return; 
+  }
+  if(pass === ""){ 
+    alert("⚠️ Please enter a Password."); 
+    return; 
+  }
+  if(pass !== cpass){ 
+    alert("⚠️ Passwords do not match."); 
+    return; 
+  }
+  if(rank === "" || rank === "Select Your skil"){ 
+    alert("⚠️ Please select your Gang Skill."); 
+    return; 
+  }
+  if(realPhoto === ""){ 
+    alert("⚠️ Please upload your Real Photo."); 
+    return; 
+  }
+  if(profilePhoto === ""){ 
+    alert("⚠️ Please upload your Profile Photo."); 
+    return; 
+  }
+
+// Form compiled successfully
+localStorage.setItem("userEmail", email); // Email save
+localStorage.setItem("userPhone", phone); // Phone save
+
+alert("✅ Form Completed Successfully, Sena! Proceeding to Verification...");
+window.location.href = "verify.html";
+}
+</script>
+</body>
+</html>
